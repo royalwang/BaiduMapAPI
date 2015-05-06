@@ -13,9 +13,7 @@ Pod::Spec.new do |s|
   s.subspec 'BaiduMapAPIExtend' do |spec|
     spec.requires_arc = true
     spec.public_header_files = 'Framework/Extend/*.h'
-    spec.source_files = [
-      'Framework/Extend/*.{h,mm,m}',
-    ]
+    spec.source_files = 'Framework/Extend/*.{h,mm,m}'
   end
 
   s.subspec 'BaiduMapAPI' do |spec|
@@ -35,9 +33,7 @@ Pod::Spec.new do |s|
       "stdc++.6"
     ]
     spec.public_header_files = 'Framework/include/*.h'
-    spec.source_files = [
-      'Framework/include/*.{h,mm,m}',
-    ]
+    spec.source_files = 'Framework/include/*.h'
     spec.vendored_libraries = 'Framework/libBaiduMapAPI.a'
     spec.resources = 'Framework/mapapi.bundle'
   end
