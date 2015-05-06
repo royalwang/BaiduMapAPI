@@ -1,0 +1,7 @@
+platform :ios, "6.0"
+
+pod "BaiduMapAPI", :path => '../'
+
+target :BaiduMapAPIDemoTests, :exclusive => true do
+  # pod 'Kiwi'
+end
