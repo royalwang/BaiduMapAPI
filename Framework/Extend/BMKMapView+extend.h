@@ -6,7 +6,8 @@
 //  Copyright (c) 2015年 YaMei. All rights reserved.
 //
 
-#import "BMapKit.h"
+#import <BaiduMapAPI/BMapKit.h>
+
 
 /**
  *  百度地图扩展方法
@@ -31,7 +32,7 @@
 - (void)zoomToFitMapAnnotations;
 
 /**
- *  百度地图2.6.0，删除地图上的百度logo
+ *  删除地图上的百度logo
  */
 - (void)removeBaiduLogo;
 
