@@ -23,11 +23,12 @@ pod 'BaiduMapAPI', '~> 2.7.0'
 
 --------------------------------------------------------------------------------------
 
-当前版本为v2.7.0，较上一个版本（v2.6.0）的更新内容如下：
+### 当前版本为v2.7.0，较上一个版本（v2.6.0）的更新内容如下：
 
 
-自当前版本起，百度地图iOS SDK推出 .framework形式的开发包。此种类型的开发包配置简单、使用方便，欢迎开发者选用！
-【 新 增 】
+* 自当前版本起，百度地图iOS SDK推出 .framework形式的开发包。此种类型的开发包配置简单、使用方便，欢迎开发者选用！
+*【 新 增 】
+```
 基础地图
     1. 增加地图缩放等级到20级（10米）；
     2. 新增地理坐标与OpenGL坐标转换接口：
@@ -66,14 +67,17 @@ pod 'BaiduMapAPI', '~> 2.7.0'
     3、新增计算地理矩形区域的面积
         工具类BMKGeometry.h中新增接口：
         UIKIT_EXTERN double BMKAreaBetweenCoordinates(CLLocationCoordinate2D leftTop, CLLocationCoordinate2D rightBottom);
+```
 【 优 化 】
+```
     1. 减少首次启动SDK时的数据流量；
     2. 检索协议优化升级；
     3. 优化Annotation拖拽方法（长按后开始拖拽）；
+```
 【 修 复 】
+```
     1. 修复在线地图和离线地图穿插使用时，地图内存不释放的bug；
     2. 修复云检索过程中偶现崩溃的bug；
     3. 修复地图在autolayout布局下无效的bug；
     4. 修复BMKAnnotationView重叠的bug；
-
-
+```
