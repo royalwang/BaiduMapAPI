@@ -8,33 +8,26 @@ Pod::Spec.new do |s|
   s.authors  = { 'Steven' => 'qzs21@qq.com' }
   s.source   = { :git => 'https://github.com/qzs21/BaiduMapAPI.git', :tag => s.version }
   s.ios.deployment_target = '4.3'
-
-  s.subspec 'BaiduMapAPIExtend' do |spec|
-    spec.requires_arc = true
-    spec.public_header_files = 'Framework/Extend/*.h'
-    spec.source_files = 'Framework/Extend/*.{h,mm,m}'
-  end
-
-  s.subspec 'BaiduMapAPI' do |spec|
-    spec.requires_arc   = false
-    spec.compiler_flags = '-lObjC'
-    spec.frameworks = [ 
-      'UIKit',
-      'CoreLocation',
-      'QuartzCore',
-      'OpenGLES',
-      'SystemConfiguration',
-      'CoreGraphics',
-      'Security'
-    ]
-    spec.libraries = [
-      "stdc++",
-      "stdc++.6"
-    ]
-    spec.public_header_files = 'Framework/include/*.h'
-    spec.source_files = 'Framework/include/*.h'
-    spec.vendored_libraries = 'Framework/libBaiduMapAPI.a'
-    spec.resources = 'Framework/mapapi.bundle'
-  end
+  
+  s.frameworks = [ 
+    'UIKit',
+    'CoreLocation',
+    'QuartzCore',
+    'OpenGLES',
+    'SystemConfiguration',
+    'CoreGraphics',
+    'Security'
+  ]
+  s.libraries = [
+    "stdc++",
+    "stdc++.6"
+  ]
+  s.source_files = [
+    'Framework/include/*.h',
+    'Framework/Extend/*.{h,mm,m}'
+  ]
+  s.vendored_libraries = 'Framework/libBaiduMapAPI.a'
+  s.resources = 'Framework/mapapi.bundle'
+  
   
 end

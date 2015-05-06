@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 YaMei. All rights reserved.
 //
 
-#import <BMapKit.h>
+#import "BMapKit.h"
 
 /**
  *  百度地图扩展方法
