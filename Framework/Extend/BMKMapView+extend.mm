@@ -127,11 +127,11 @@
     [self setRegion:region animated:YES];
 }
 
-/// 百度地图2.6.0，删除地图上的百度logo
+/// 百度地图2.8.0，删除地图上的百度logo
 - (void)removeBaiduLogo {
     for (UIView *view in [self.subviews[0] subviews]) {
         if ([view isKindOfClass:UIImageView.class]) {
-            [view removeFromSuperview];
+            view.hidden = YES;
             break;
         }
     }

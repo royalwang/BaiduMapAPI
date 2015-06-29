@@ -1,36 +1,52 @@
 Pod::Spec.new do |s|
 
   s.name     = 'BaiduMapAPI'
-  s.version  = '2.7.0'
+  s.version  = '2.8.0'
   s.license  = { :type => 'Copyright', :text => 'LICENSE  ©2013 Baidu, Inc. All rights reserved.' }
   s.summary  = 'Baidu Map API For iOS.'
   s.homepage = 'http://developer.baidu.com/map/index.php?title=iossdk'
   s.authors  = { 'Steven' => 'qzs21@qq.com' }
   s.source   = { :git => 'https://github.com/qzs21/BaiduMapAPI.git', :tag => s.version }
   s.ios.deployment_target = '5.0'
-  s.requires_arc   = true
 
-  s.resources               = 'Framework/Resources/mapapi.bundle'
-  s.ios.vendored_frameworks = 'Framework/BaiduMapAPI.framework'
-  s.public_header_files = [
-    'Framework/Extend/*.h',
-    'Framework/BaiduMapAPI.framework/Headers/*.h'
-  ]
-  s.source_files = [
-      'Framework/Extend/*.{h,mm,m}',
-  ]
-  s.frameworks = [ 
-    'UIKit',
-    'CoreLocation',
-    'QuartzCore',
-    'OpenGLES',
-    'SystemConfiguration',
-    'CoreGraphics',
-    'Security'
-  ] 
-  s.libraries = [
-    "stdc++",
-    "stdc++.6"
-  ]
-  
+  s.default_subspec = 'All'
+  s.subspec 'All' do |spec|
+    spec.ios.dependency 'BaiduMapAPI/Core'
+    spec.ios.dependency 'BaiduMapAPI/Extend'
+  end
+
+  s.subspec 'Core' do |spec|
+    spec.requires_arc            = true
+    spec.compiler_flags          = '-ObjC'
+    spec.resources               = 'Framework/Resources/mapapi.bundle'
+    spec.ios.vendored_frameworks = 'Framework/BaiduMapAPI.framework'
+    spec.public_header_files = [
+      'Framework/BaiduMapAPI.framework/Headers/*.h'
+    ]
+    spec.frameworks = [
+      'UIKit',
+      'CoreLocation',
+      'QuartzCore',
+      'OpenGLES',
+      'SystemConfiguration',
+      'CoreGraphics',
+      'Security'
+    ]
+    spec.libraries = [
+      "stdc++",
+      "stdc++.6"
+    ]
+  end
+
+  s.subspec 'Extend' do |spec|
+    spec.requires_arc        = true
+    spec.public_header_files = [
+      'Framework/Extend/*.h'
+    ]
+    spec.source_files = [
+        'Framework/Extend/*.{h,mm,m}'
+    ]
+    spec.ios.dependency 'BaiduMapAPI/Core'
+  end
+
 end

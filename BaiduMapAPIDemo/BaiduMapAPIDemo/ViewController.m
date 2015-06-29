@@ -7,21 +7,41 @@
 //
 
 #import "ViewController.h"
+#import <BaiduMapAPI/BMapKit.h>
+#import <BaiduMapAPI/BMKMapView+extend.h>
 
-@interface ViewController ()
-
+@interface ViewController () <BMKMapViewDelegate>
+@property (nonatomic, strong) BMKMapView * mapView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.mapView = [[BMKMapView alloc] init];
+    [self.view addSubview:self.mapView];
+    
+    [self.mapView removeBaiduLogo];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    self.mapView.frame = self.view.bounds;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.mapView viewWillAppear];
+    self.mapView.delegate = self;
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.mapView viewWillDisappear];
+    self.mapView.delegate = nil;
 }
 
 @end
