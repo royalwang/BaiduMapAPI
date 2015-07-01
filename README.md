@@ -8,7 +8,7 @@
 `BaiduMapAPI` 支持 [CocoaPods](http://cocoapods.org).  添加下面的配置到 `Podfile`:
 
 ```ruby
-pod 'BaiduMapAPI', '~> 2.7.0'
+pod 'BaiduMapAPI', '~> 2.8.0'
 ```
 
 
