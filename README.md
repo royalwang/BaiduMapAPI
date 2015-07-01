@@ -11,7 +11,7 @@
 pod 'BaiduMapAPI'
 ```
 
-# Extends BMKMapView
+# BMKMapView Extend
 ```objective-c
 /**
  *  百度地图扩展方法
@@ -50,3 +50,5 @@ pod 'BaiduMapAPI'
 @end
 ```
 
+# Official documents
+[http://developer.baidu.com/map/index.php?title=iossdk](http://developer.baidu.com/map/index.php?title=iossdk)
