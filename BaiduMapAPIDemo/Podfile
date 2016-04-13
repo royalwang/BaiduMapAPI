@@ -1,3 +1,7 @@
 platform :ios, "6.0"
 
+<<<<<<< HEAD
 pod "BaiduMapAPI", :path => '../'
+=======
+pod 'BaiduMapAPI-Extend', :podspec => '../BaiduMapAPI-Extend.podspec'
+>>>>>>> origin/master

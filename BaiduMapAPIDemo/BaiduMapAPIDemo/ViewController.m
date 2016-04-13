@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 #import <BaiduMapAPI/BMapKit.h>
+<<<<<<< HEAD
 #import <BaiduMapAPI/BMKMapView+extend.h>
+=======
+#import <BaiduMapAPI-Extend/BMKMapView+extend.h>
+>>>>>>> origin/master
 
 @interface ViewController () <BMKMapViewDelegate>
 @property (nonatomic, strong) BMKMapView * mapView;
